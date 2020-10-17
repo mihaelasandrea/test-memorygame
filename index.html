@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+<script src="assets/js/script.js" async></script>
+<title>Planet Shift</title>
+</head>
+<body>
+    <article class="container">
+        <h1 class="game-title">PLANET SHIFT</h1>
+        <div class="overlay-text visible">
+            Start Game
+        </div>
+        <div id="game-over-text" class="overlay-text">
+            GAME OVER
+            <span class="overlay-text-small">Restart Game</span>
+        </div>
+        <div id="victory-text" class="overlay-text">
+            VICTORY
+            <span class="overlay-text-small">Restart Game</span>
+        </div>
+        <div class="features">
+            <div class="difficulty">
+                <button class="beginner">BEGINNER</button>
+                <button class="advanced">ADVANCED</button>
+            </div>
+         <!--<div class="play-game">
+                <button id="start">Start Game</button>
+                <button id="restart">Restart Game</button>
+            </div>-->
+            <div id="play-audio">
+                <button onclick="enableMute()" type="button">MUTE</button>
+                <button onclick="disableMute()" type="button">UNMUTE</button>
+            </div>
+        </div>
+        <div class="game-info-container">
+            <div class="game-info flips">
+                Shifts: <span id="flips"> 0</span>
+            </div>
+            <div class="game-info">
+                Time: <span id="time-remaining">60</span>
+            </div>
+            <!--<div class="game-info">
+                Time<span id="time-remaining-advanced"> 50</span>
+            </div>-->
+        </div>
+
+        <div class="game-container">
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/callisto.jpg" alt="callisto image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/callisto.jpg" alt="callisto image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+            
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/earth.jpg" alt="earth image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/earth.jpg" alt="earth image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/ganymede.jpg" alt="ganymede image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/ganymede.jpg" alt="ganymede image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/jupiter.jpg" alt="jupiter image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/jupiter.jpg" alt="jupiter image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/neptune.jpg" alt="neptune image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/neptune.jpg" alt="neptune image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/osiris.jpg" alt="osiris image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/osiris.jpg" alt="osiris image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/titan.jpg" alt="titan image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/titan.jpg" alt="titan image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/uranus.jpg" alt="uranus image">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/space.jpg" alt="space image">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/uranus.jpg" alt="uranus image">
+                </div>
+            </div>
+        </div>
+    </article>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

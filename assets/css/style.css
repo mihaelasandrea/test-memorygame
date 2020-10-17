@@ -1,0 +1,179 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0;
+    background: linear-gradient(#000000, #0f73b6d8);
+}
+
+.game-title {
+    color: #4a4b4e;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: 6px;
+}
+
+.features {
+    color: #848797;
+    font-size: 2em;
+}
+
+.commands {
+    display: inline;
+}
+
+.game-info {
+    color: #cdcfdd;
+    font-size: 2em;
+    display: inline;
+}
+
+.game-info-container {
+    margin-top: 2em;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 2px;
+    margin: 10px 50px;
+    justify-content: center;
+    perspective: 500px
+}
+
+.card {
+    position: relative;
+    height: 100px;
+    width: 100px;
+   
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    backface-visibility: hidden;
+    align-items: center;
+    transition: transform 500ms ease-in-out;
+}
+
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+    transform: rotateY(0);
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: rgb(202, 223, 247);
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+.overlay-text-small {
+    font-size: .3em;
+}
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.7);
+        font-size: 6em;
+    }
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    background-color: #316481;
+    border: none;
+    color: #151e22;
+    padding: 14px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-top: 1em;
+    outline: none;
+}
+
+button:hover {
+    box-shadow: 5px 10px 18px rgb(252, 252, 253);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+    .card {
+        height: 60px;
+        width: 60px;
+    }
+
+    .game-info {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .game-title {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .features {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    button {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    @keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.7);
+        font-size: 3em;
+    }
+}
+}
