@@ -34,9 +34,11 @@ class AudioController {
     }
     enableMute() {
         this.stopMusic();
+        this.bgMusic.pause();
     }
     disableMute() {
         this.startMusic();
+        this.bgMusic.play();
     }
 }  
 
@@ -181,6 +183,5 @@ function ready(){
     });
 };
 
-//Code written by me
 
 
