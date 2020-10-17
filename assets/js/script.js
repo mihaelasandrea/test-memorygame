@@ -32,6 +32,12 @@ class AudioController {
         this.stopMusic();
         this.gameOverSound.play();
     }
+    enableMute() {
+        this.stopMusic();
+    }
+    disableMute() {
+        this.startMusic();
+    }
 }  
 
 class PlanetShift {
@@ -177,14 +183,4 @@ function ready(){
 
 //Code written by me
 
-
-function enableMute() {
-    audio.muted = true;
-}
-
-function disableMute() {
-    audio.muted = false;
-}
-
-let audio = document.getElementById("play-audio");
 
