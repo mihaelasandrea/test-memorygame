@@ -23,9 +23,6 @@ body {
 .features {
     color: #848797;
     font-size: 2em;
-}
-
-.commands {
     display: inline;
 }
 
@@ -112,7 +109,7 @@ body {
     }
 }
 
-.container {
+#container {
     text-align: center;
 }
 
@@ -167,13 +164,13 @@ img {
     }
 
     @keyframes overlay-grow {
-    from {
-        background-color: rgba(0, 0, 0, 0);
-        font-size: 0;
+        from {
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 0;
+        }
+        to {
+            background-color: rgba(0, 0, 0, 0.7);
+            font-size: 3em;
+        }
     }
-    to {
-        background-color: rgba(0, 0, 0, 0.7);
-        font-size: 3em;
-    }
-}
 }

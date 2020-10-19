@@ -33,14 +33,16 @@ class AudioController {
         this.gameOverSound.play();
     }
     enableMute() {
-        this.stopMusic();
-        this.bgMusic.pause();
+        document.getElementById("mute").addEventListener("click", () => {
+           this.bgMusic.pause();
+        })
     }
     disableMute() {
-        this.startMusic();
-        this.bgMusic.play();
+        document.getElementById("unmute").addEventListener("click", () => {
+            this.bgMusic.play();
+        });
     }
-}  
+}
 
 class PlanetShift {
     constructor(totalTime, cards) {
@@ -60,6 +62,8 @@ class PlanetShift {
          this.busy = true;
          setTimeout(() => {
              this.audioController.startMusic();
+             this.audioController.enableMute();
+             this.audioController.disableMute();
              this.shuffleCards(this.cardsArray);
              this.countdown = this.startCountdown();
              this.busy = false;
@@ -158,7 +162,7 @@ class PlanetShift {
     }
 }
 
-if(document.readyState == "loading") {
+if(document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", ready());
 } else {
     ready();
@@ -181,7 +185,5 @@ function ready(){
             game.flipCard(card);
         });
     });
-};
-
-
+}
 
